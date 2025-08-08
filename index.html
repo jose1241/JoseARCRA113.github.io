@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>José Armando Corona Rivas - CV Profesional</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>Carta de Amor Interactiva</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        
         * {
             margin: 0;
             padding: 0;
@@ -15,537 +14,804 @@
         }
         
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #2d3748;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #fdf0f9 0%, #fce5f3 100%);
             min-height: 100vh;
-            padding: 40px 20px;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: #6c4a5f;
+            font-family: 'Playfair Display', serif;
+            overflow-x: hidden;
             position: relative;
         }
         
-        .container::before {
-            content: '';
+        body::before {
+            content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #667eea, #764ba2, #f093fb);
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="rgba(232, 62, 140, 0.03)" d="M20,20 Q40,5 50,30 T80,20 Q95,40 70,50 T80,80 Q60,95 50,70 T20,80 Q5,60 30,50 T20,20 Z"></path></svg>');
+            background-size: 200px;
+            z-index: -1;
+            opacity: 0.7;
         }
         
-        .header {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-            color: white;
-            padding: 50px 40px;
-            position: relative;
+        .love-letter-container {
+            width: 100%;
+            max-width: 800px;
+            background: #fffafd;
+            border-radius: 20px;
             overflow: hidden;
+            box-shadow: 0 15px 40px rgba(172, 85, 132, 0.2), 0 0 0 10px #fff, 0 0 0 12px #fce5f3;
+            position: relative;
+            border: 8px double #e83e8c;
+            padding: 40px 30px;
+            margin: 20px;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+            z-index: 1;
         }
         
-        .header::before {
+        .letter-header {
+            text-align: center;
+            padding: 20px 0 30px;
+            position: relative;
+        }
+        
+        .letter-header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: #e83e8c;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+            position: relative;
+            display: inline-block;
+        }
+        
+        .letter-header h1::after {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 200px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #e83e8c, transparent);
         }
         
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .letter-header p {
+            font-size: 1.1rem;
+            color: #8a4a58;
+            max-width: 600px;
+            margin: 15px auto 0;
             position: relative;
-            z-index: 2;
-                gap: 40px;
+            padding: 0 20px;
         }
         
-        .header-left {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 10px;
-        }
-        
-        .header-right {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .profile-photo {
-            width: 110px;
-            height: 110px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid #667eea;
-            margin-bottom: 0;
-            box-shadow: 0 4px 18px rgba(102, 126, 234, 0.15);
-            background: #fff;
-            display: block;
-        }
-        
-        .header-left h1 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            background: linear-gradient(135deg, #ffffff, #e2e8f0);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .header-left .subtitle {
-            font-size: 1.2rem;
-            color: #a0aec0;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-        
-        .contact-info {
-            text-align: right;
-            font-size: 0.95rem;
-        }
-        
-        .contact-info.contact-bottom {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 0;
-            text-align: center;
-        }
-        
-        .contact-item {
-            margin-bottom: 0;
+        .heart-divider {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            color: #e2e8f0;
+            margin: 25px 0;
         }
         
-        .contact-item i {
-            width: 18px;
-            color: #667eea;
+        .heart-divider::before, .heart-divider::after {
+            content: '';
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e83e8c, transparent);
+        }
+        
+        .heart-divider i {
+            margin: 0 15px;
+            color: #e83e8c;
+            font-size: 1.8rem;
+            animation: heartbeat 1.5s infinite;
+        }
+        
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            14% { transform: scale(1.3); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.3); }
+            70% { transform: scale(1); }
+        }
+        
+        .letter-content {
+            padding: 20px;
+            line-height: 1.8;
             font-size: 1.1rem;
+            position: relative;
         }
         
-        .content {
-            padding: 50px 40px;
-            display: grid;
-            grid-template-columns: 1fr 1.4fr;
-            gap: 50px;
+        .letter-content::before {
+            content: """;
+            position: absolute;
+            top: -30px;
+            left: -20px;
+            font-size: 8rem;
+            font-family: 'Playfair Display', serif;
+            color: rgba(232, 62, 140, 0.1);
+            line-height: 1;
+            z-index: 0;
         }
         
-        .section {
-            margin-bottom: 45px;
+        .love-language-section {
+            background: rgba(252, 234, 246, 0.6);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 4px solid #e83e8c;
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+            backdrop-filter: blur(2px);
         }
         
-        .section:last-child {
-            margin-bottom: 0;
+        .love-language-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(232, 62, 140, 0.15);
+            background: rgba(252, 234, 246, 0.8);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .section-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #e83e8c 0%, #c95c8b 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.4rem;
+            box-shadow: 0 4px 8px rgba(232, 62, 140, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .love-language-section:hover .section-icon {
+            transform: rotate(15deg) scale(1.1);
+            box-shadow: 0 6px 12px rgba(232, 62, 140, 0.4);
         }
         
         .section-title {
-            font-size: 1.4rem;
-            color: #1a202c;
-            margin-bottom: 25px;
-            font-weight: 600;
+            font-size: 1.5rem;
+            color: #8a4a58;
+            font-weight: 700;
             position: relative;
-            padding-bottom: 12px;
+            display: inline-block;
         }
         
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: 0;
+            bottom: -5px;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #e83e8c, transparent);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
         
-        .about-text {
-            color: #4a5568;
-            font-size: 1rem;
-            line-height: 1.8;
-            text-align: justify;
-            font-weight: 400;
+        .love-language-section:hover .section-title::after {
+            transform: scaleX(1);
         }
         
-        .education-item, .experience-item {
-            margin-bottom: 35px;
-            padding: 25px;
-            background: #f7fafc;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-            transition: all 0.3s ease;
-        }
-        
-        .education-item:hover, .experience-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .education-title, .job-title {
-            font-weight: 600;
-            color: #1a202c;
-            margin-bottom: 8px;
+        .personalized-message {
+            width: 100%;
+            min-height: 100px;
+            padding: 15px;
             font-size: 1.1rem;
-        }
-        
-        .education-institution, .company {
-            color: #667eea;
-            font-size: 1rem;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-        
-        .education-year, .job-period {
-            color: #718096;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            font-weight: 400;
-        }
-        
-        .job-description {
-            color: #4a5568;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 15px;
-        }
-        
-        .achievements {
-            padding-left: 0;
-            list-style: none;
-        }
-        
-        .achievements li {
-            color: #4a5568;
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-            padding-left: 25px;
-            position: relative;
-            line-height: 1.5;
-        }
-        
-        .achievements li:before {
-            content: "✓";
-            color: #667eea;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-        
-        .skills-list, .languages-list {
-            list-style: none;
-            display: grid;
-            gap: 12px;
-        }
-        
-        .skills-list li, .languages-list li {
-            color: #4a5568;
-            font-size: 0.95rem;
-            padding: 12px 18px;
-            background: #f7fafc;
-            border-radius: 8px;
-            border-left: 3px solid #667eea;
-            font-weight: 400;
-            transition: all 0.3s ease;
-        }
-        
-        .skills-list li:hover, .languages-list li:hover {
-            background: #edf2f7;
-            transform: translateX(5px);
-        }
-        
-        .portfolio-section {
-            background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
-            padding: 30px;
-            border-radius: 15px;
-            text-align: center;
-        }
-        
-        .portfolio-description {
-            color: #4a5568;
-            font-size: 1rem;
-            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            color: #6c4a5f;
+            background: transparent;
+            border: none;
+            resize: none;
             line-height: 1.6;
+            position: relative;
+            z-index: 1;
         }
         
-        .portfolio-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+        .personalized-message:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
         }
         
-        .portfolio-link {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 20px;
-            border-radius: 10px;
-            text-decoration: none;
+        .example-text {
             font-size: 0.95rem;
-            font-weight: 500;
+            color: #a87c98;
+            margin-top: 8px;
+            font-style: italic;
+            padding-left: 10px;
+        }
+        
+        .final-message {
+            text-align: center;
+            padding: 30px 20px;
+            margin: 30px 0;
+            background: linear-gradient(135deg, rgba(232, 62, 140, 0.1) 0%, rgba(252, 234, 246, 0.4) 100%);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            border: 1px dashed #e83e8c;
+        }
+        
+        .final-message::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path fill="rgba(232, 62, 140, 0.1)" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-size: 40px;
+            z-index: 0;
+            opacity: 0.2;
+        }
+        
+        .final-message h2 {
+            color: #8a4a58;
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .signature {
+            text-align: right;
+            margin-top: 40px;
+            padding-right: 50px;
+            position: relative;
+        }
+        
+        .signature p {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #e83e8c;
+            display: inline-block;
+            position: relative;
+        }
+        
+        .signature p::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(to right, transparent, #e83e8c, transparent);
+        }
+        
+        .floating-hearts {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .heart {
+            position: absolute;
+            color: rgba(232, 62, 140, 0.15);
+            font-size: 1.5rem;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            to {
+                transform: translateY(-1000px) rotate(360deg);
+            }
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 25px;
+            color: #a87c98;
+            font-size: 1rem;
+            border-top: 1px solid #f0d5e5;
+            margin-top: 20px;
+            font-style: italic;
+            position: relative;
+        }
+        
+        .footer::before {
+            content: "❦";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            color: #e83e8c;
+            background: #fffafd;
+            padding: 0 15px;
+        }
+        
+        .romantic-quote {
+            text-align: center;
+            font-style: italic;
+            margin: 20px 0;
+            color: #8a4a58;
+            font-size: 1.1rem;
+            position: relative;
+            padding: 0 20px;
+        }
+        
+        .romantic-quote::before, .romantic-quote::after {
+            content: '"';
+            font-size: 2rem;
+            color: #e83e8c;
+            position: absolute;
+            opacity: 0.3;
+        }
+        
+        .romantic-quote::before {
+            top: -15px;
+            left: 0;
+        }
+        
+        .romantic-quote::after {
+            bottom: -25px;
+            right: 0;
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Estilos para el botón y el GIF */
+        .gift-button-container {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .gift-button {
+            background: linear-gradient(to right, #e83e8c, #c95c8b);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-family: 'Playfair Display', serif;
+            border-radius: 50px;
+            cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            box-shadow: 0 5px 15px rgba(232, 62, 140, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: 2px solid white;
         }
         
-        .portfolio-link:hover {
+        .gift-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 20px rgba(232, 62, 140, 0.4);
+            background: linear-gradient(to right, #c95c8b, #e83e8c);
         }
         
-        .award-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: linear-gradient(135deg, #ffd700, #ffed4a);
-            color: #744210;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .gift-button:active {
+            transform: translateY(1px);
         }
         
-        .bronze-badge {
-            background: linear-gradient(135deg, #cd7f32, #daa520);
-            color: #4a4a4a;
+        .gift-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
         }
         
-        @media (max-width: 768px) {
-            body {
-                padding: 20px 10px;
-            }
-            
-            .content {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                padding: 30px 25px;
-            }
-            
-            .header {
-                padding: 40px 25px;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                align-items: center;
-                gap: 25px;
-            }
-            .header-left {
-                align-items: center;
-                text-align: center;
-            }
-            .header-right {
-                align-items: center;
-            }
-            
-            .contact-info {
-                text-align: center;
-            }
-            
-            .contact-item {
-                justify-content: center;
-            }
-            
-            .header-left h1 {
-                font-size: 2.2rem;
-            }
-            
-            .portfolio-links {
-                grid-template-columns: 1fr;
-            }
+        .gift-button:hover::before {
+            left: 100%;
         }
         
-        @media print {
-            body {
-                background: white;
-                padding: 0;
+        .gift-button::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4, #ff1493);
+            z-index: -2;
+            border-radius: 50px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gift-button:hover::after {
+            opacity: 1;
+            animation: borderGlow 2s linear infinite;
+        }
+        
+        @keyframes borderGlow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 200% 50%; }
+        }
+        
+        .gift-container {
+            display: none;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 400px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 0.8s ease-in;
+            border: 4px solid #e83e8c;
+            position: relative;
+        }
+        
+        .gift-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgba(255, 255, 255, 0.5)"><path d="M0 0h24v24H0z" fill="none"/><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>');
+            background-size: 40px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .gift-container img {
+            width: 100%;
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .gift-message {
+            padding: 15px;
+            background: linear-gradient(to right, #e83e8c, #c95c8b);
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .button-heart {
+            margin-left: 10px;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .secret-note {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.9rem;
+            color: #a87c98;
+            font-style: italic;
+            animation: blink 2s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+        
+        @media (max-width: 650px) {
+            .love-letter-container {
+                padding: 20px 15px;
             }
             
-            .container {
-                box-shadow: none;
-                border-radius: 0;
+            .letter-header h1 {
+                font-size: 2.8rem;
             }
             
-            .portfolio-link {
-                color: #667eea !important;
-                background: transparent !important;
-                border: 1px solid #667eea !important;
+            .section-title {
+                font-size: 1.3rem;
+            }
+            
+            .signature p {
+                font-size: 2rem;
+            }
+            
+            .gift-button {
+                padding: 12px 30px;
+                font-size: 1.1rem;
+            }
+            
+            .gift-message {
+                font-size: 1.5rem;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="header-content">
-                <div class="header-left">
-                    <h1>José Armando Corona Rivas</h1>
-                    <div class="subtitle">Ingeniero en Sistemas Computacionales</div>
-                </div>
-                <div class="header-right">
-                    <img src="./cv.jpg" alt="Foto de José Armando Corona Rivas" class="profile-photo">
-                    <div class="contact-info contact-bottom">
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>tt5trfgfgtftrgrrrfgffdss@outlook.com</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-phone"></i>
-                            <span>55 27117932</span>
-                        </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>México, CDMX</span>
-                        </div>
+    <div class="love-letter-container">
+        <div class="floating-hearts" id="floatingHearts"></div>
+        
+        <div class="letter-header">
+            <h1>Para Mi niña dios</h1>
+            <p>Una carta para expresar lo que siento, en cada momento a tu lado</p>
+        </div>
+        
+        <div class="heart-divider">
+            <i class="fas fa-heart"></i>
+        </div>
+        
+        <div class="letter-content">
+            <p class="romantic-quote">"El amor tuvo sentido el día que crucé mi mirada con la tuya."</p>
+            
+            <p>Mi querido amor,</p>
+            
+            <p>Hola mi vidaaaa, yo se que era una presentacion, pero pero me queria hacer algo mas a mi estilo esta carta la cree con cada latido, cada sentimiento que me evoca tu presencia Porque cada vez que pienso en ti suspiro y cada palabra que pongo aquí lleva un pedacito de mi corazón para ti.</p>
+            
+            <div class="love-language-section fade-in">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-comment-dots"></i>
                     </div>
+                    <h2 class="section-title">EL DIA QUE NOS CONOCIMOS</h2>
                 </div>
+                <div class="personalized-message">Aun recuerdo aquel dia que nos conocimos, que sin pensarlo llevaria a un mundo nuevo a tu lado, aquel dia que te mire con otros ojos tenias una presencia que irradiaba esplendor como si todo a mi alrededor se detuviera para admirarte. </div>
+            </div>
+        
+            
+            <div class="love-language-section fade-in" style="animation-delay: 0.4s;">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h2 class="section-title">NUESTRAS ANECDOTAS</h2>
+                </div>
+                <div class="personalized-message">Hay algo en especial que siempre recuerdo con mucho cariño, nuestro picnic fue algo que me hizo confirmar aun mas mi amor por ti, te veias hermosa y tambien fue una de las citas mas bonitas que hemos tenido. (aparte los "sanwiches?" "sandwitches??" (se me olvido como se esctibe jskdjakwñdj) estaban muy ricos xd) </div>
+            </div>
+            
+            <div class="love-language-section fade-in" style="animation-delay: 0.6s;">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h2 class="section-title">SE ME ACABO LA CREATIVIDAD</h2>
+                </div>
+                <div class="personalized-message">nOOoOoOoOoOo se me acabaron las ideas, bueno como estas guapa?. Como te hago sentir en la relacion? hasta ahora te sientes comoda?</div>
+            </div>
+            
+            <div class="love-language-section fade-in" style="animation-delay: 0.8s;">
+                <div class="section-header">
+                    <div class="section-icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h2 class="section-title">ME GUSTAS</h2>
+                </div>
+                <div class="personalized-message">Me gustaste por ser tu, el simple hecho de tu presencia, tu voz calida, tus sentimientos tan lindos hacia mi, me gusta todo de ti.</div>
+            </div>
+            
+            <div class="final-message fade-in" style="animation-delay: 1s;">
+                <h2><i class="fas fa-heart"></i> TE AMO </h2>
+                <p>Aún recuerdo el instante primero,
+cuando el mundo se hizo pequeño,
+y tu mirada, dulce y sincera,
+dibujó un nuevo cielo en mis sueños.
+
+Llegaste sin ruido, sin aviso,
+pero con la fuerza de un suspiro eterno,
+llenando mis días de luz y sentido,
+y mis noches de calma y de anhelo.
+
+Eres el latido que guía mi paso,
+la razón de cada palabra que escribo,
+el refugio donde quiero quedarme,
+y el horizonte al que siempre me dirijo.</p>
+            </div>
+            
+            <p>Eres mi persona favorita en el mundo y mi mayor inspiración. Gracias por ser quien eres y por compartir este camino conmigo. Cada día a tu lado es un regalo que atesoro profundamente.</p>
+            
+            <div class="signature">
+                <p>Con todo mi amor</p>
+            </div>
+            
+            <!-- Contenedor del botón -->
+            <div class="gift-button-container">
+                <button id="giftButton" class="gift-button">
+                   ¿Qué sera este boton? <i class="fas fa-heart button-heart"></i>
+                </button>
+            </div>
+            
+            <p class="secret-note">Pssst... ¡Haz clic en el botón para una sorpresa!</p>
+            
+            <!-- Contenedor para el GIF -->
+            <div id="giftContainer" class="gift-container">
+                <img src="https://c.tenor.com/KbVNtNgwCZ8AAAAd/cat-kiss.gif" alt="GIF romántico">
+                <div class="gift-message">Mi amor por ti es infinito ❤️</div>
             </div>
         </div>
         
-        <div class="content">
-            <div class="left-column">
-                <div class="section">
-                    <h2 class="section-title">Perfil Profesional</h2>
-                    <p class="about-text">
-                        Ingeniero en Sistemas Computacionales con sólida experiencia en diseño, planeación y desarrollo de sistemas complejos. 
-                        Especializado en tecnologías blockchain, desarrollo full-stack y soluciones innovadoras. Competente en múltiples 
-                        plataformas y lenguajes de programación con enfoque en innovación tecnológica y propiedad intelectual.
-                    </p>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">Formación Académica</h2>
-                    <div class="education-item">
-                        <div class="education-title">Ingeniería en Sistemas Computacionales</div>
-                        <div class="education-institution">Tecnológico de Estudios Superiores de Huixquilucan</div>
-                        <div class="education-year">2025 - En curso</div>
-                    </div>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">Competencias Técnicas</h2>
-                    <ul class="skills-list">
-                        <li><strong>Lenguajes:</strong> Java, Python, C#, JavaScript, Solidity</li>
-                        <li><strong>Frontend:</strong> HTML5, CSS3, React, JavaScript ES6+</li>
-                        <li><strong>Backend:</strong> Node.js, Spring Boot, Django, ASP.NET</li>
-                        <li><strong>Bases de Datos:</strong> MySQL, PostgreSQL, MongoDB</li>
-                        <li><strong>Blockchain:</strong> Ethereum, Smart Contracts, Web3</li>
-                        <li><strong>IA/ML:</strong> OpenCV, MediaPipe, Computer Vision</li>
-                        <li><strong>DevOps:</strong> Git, Docker, Control de versiones</li>
-                        <li><strong>Soft Skills:</strong> Liderazgo, Trabajo en equipo, Resolución de problemas</li>
-                    </ul>
-                </div>
-                
-                <div class="section">
-                    <h2 class="section-title">Idiomas</h2>
-                    <ul class="languages-list">
-                        <li><strong>Español:</strong> Nativo</li>
-                        <li><strong>Inglés:</strong> Intermedio (B2)</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="right-column">
-                <div class="section">
-                    <h2 class="section-title">Experiencia Profesional</h2>
-                    
-                    <div class="experience-item">
-                        <div class="job-title">Desarrollador Blockchain junior</div>
-                        <div class="company">GAMA Platform</div>
-                        <div class="job-period">2025 - Proyecto colaborativo</div>
-                        <div class="job-description">
-                            Colabore en el desarrollo de una plataforma web innovadora que recompensa contenido original mediante tokens de Ethereum, 
-                            implementando un sistema automatizado de registro de propiedades intelectuales on-chain.
-                        </div>
-                        <ul class="achievements">
-                            <li>Desarrollo y despliegue de smart contracts en Solidity</li>
-                            <li>Integración completa Web3 con frontend React</li>
-                            <li>Sistema de tokenización automatizada de contenido</li>
-                            <li>Arquitectura de microservicios escalable</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="job-title">Desarrollador Full-Stack</div>
-                        <div class="company">Proyectos Académicos Destacados</div>
-                        <div class="job-period">2024 - 2025</div>
-                        <div class="job-description">
-                            Diseño e implementación de sistemas automatizados y aplicaciones innovadoras, incluyendo soluciones de IA 
-                            para control gestual y plataformas de gestión estudiantil enterprise.
-                        </div>
-                        <ul class="achievements">
-                            <li>Sistema de control musical mediante IA y reconocimiento gestual</li>
-                            <li>Plataforma integral de gestión estudiantil con dashboard administrativo</li>
-                            <li>Desarrollo de protocolos de red seguros y encriptación</li>
-                            <li>Optimización de rendimiento y escalabilidad de aplicaciones</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="experience-item">
-                        <div class="job-title">Desarrollador Competitivo</div>
-                        <div class="company">Hackathons y Competencias Nacionales</div>
-                        <div class="job-period">2023-2025 - Múltiples eventos</div>
-                        <div class="job-description">
-                            Participación exitosa en competencias de desarrollo tecnológico de alto nivel, obteniendo reconocimientos 
-                            destacados por soluciones innovadoras en blockchain y desarrollo de software.
-                        </div>
-                        <ul class="achievements">
-                            <li><span class="award-badge"><i class="fas fa-trophy"></i> 1er Lugar</span> HackaTecNM - Solución blockchain innovadora</li>
-                            <li><span class="award-badge bronze-badge"><i class="fas fa-medal"></i> 3er Lugar</span> ETH Cinco de Mayo - Categoría Propiedad Intelectual</li>
-                            <li>Desarrollo de DApps (Aplicaciones Descentralizadas)</li>
-                            <li>Prototipado rápido y metodologías ágiles</li>
-                        </ul>
-                    </div>
-                </div>
-                
-       <!--         <div class="section">
-                    <div class="portfolio-section">
-                        <h2 class="section-title">Portafolio Digital</h2>
-                        <p class="portfolio-description">
-                            Explora mi trabajo y proyectos destacados a través de mis plataformas profesionales:
-                        </p>
-                        <div class="portfolio-links">
-                            <a href="#" class="portfolio-link">
-                                <i class="fab fa-github"></i>
-                                GitHub
-                            </a>
-                            <a href="#" class="portfolio-link">
-                                <i class="fab fa-linkedin"></i>
-                                LinkedIn
-                            </a>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-globe"></i>
-                                Portfolio Web
-                            </a>
-                            <a href="#" class="portfolio-link">
-                                <i class="fas fa-code"></i>
-                                Proyectos Live
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="footer">
+            El amor no se mide en momentos, sino en eternidades compartidas
         </div>
-    </div> -->
+    </div>
+
+    <script>
+        // Crear corazones flotantes
+        const floatingHearts = document.getElementById('floatingHearts');
+        for (let i = 0; i < 25; i++) {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '<i class="fas fa-heart"></i>';
+            heart.style.left = `${Math.random() * 100}%`;
+            heart.style.top = `${Math.random() * 100}%`;
+            heart.style.animationDuration = `${15 + Math.random() * 20}s`;
+            heart.style.opacity = Math.random() * 0.4 + 0.1;
+            heart.style.fontSize = `${Math.random() * 1.5 + 1}rem`;
+            heart.style.color = `hsl(${Math.random() * 360}, 70%, 65%)`;
+            floatingHearts.appendChild(heart);
+        }
+        
+        // Animación de latido para los títulos
+        const sectionTitles = document.querySelectorAll('.section-title');
+        sectionTitles.forEach(title => {
+            title.addEventListener('mouseenter', () => {
+                title.style.animation = 'heartbeat 0.8s';
+            });
+            title.addEventListener('mouseleave', () => {
+                title.style.animation = '';
+            });
+        });
+        
+        // Efecto de escritura para la carta
+        document.querySelectorAll('.personalized-message').forEach(message => {
+            const originalText = message.innerHTML;
+            message.innerHTML = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    message.innerHTML += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 20);
+                }
+            };
+            
+            // Iniciar efecto después de un pequeño retraso
+            setTimeout(typeWriter, 500);
+        });
+        
+        // Funcionalidad para mostrar el GIF
+        const giftButton = document.getElementById('giftButton');
+        const giftContainer = document.getElementById('giftContainer');
+        
+        giftButton.addEventListener('click', function() {
+            // Mostrar el GIF
+            giftContainer.style.display = 'block';
+            
+            // Cambiar el botón
+            this.innerHTML = '¡Eres mi todo! <i class="fas fa-heart button-heart"></i>';
+            this.style.background = 'linear-gradient(to right, #c95c8b, #e83e8c)';
+            
+            // Ocultar la nota secreta
+            document.querySelector('.secret-note').style.display = 'none';
+            
+            // Agregar confeti de corazones
+            createHeartConfetti();
+            
+            // Agregar efecto de brillo
+            createSparkleEffect();
+        });
+        
+        // Crear efecto de confeti de corazones
+        function createHeartConfetti() {
+            const confettiContainer = document.createElement('div');
+            confettiContainer.style.position = 'fixed';
+            confettiContainer.style.top = '0';
+            confettiContainer.style.left = '0';
+            confettiContainer.style.width = '100%';
+            confettiContainer.style.height = '100%';
+            confettiContainer.style.pointerEvents = 'none';
+            confettiContainer.style.zIndex = '9999';
+            document.body.appendChild(confettiContainer);
+            
+            const heartColors = ['#e83e8c', '#ff69b4', '#ff1493', '#c95c8b', '#ff6b9d'];
+            
+            for (let i = 0; i < 80; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '<i class="fas fa-heart"></i>';
+                heart.style.position = 'absolute';
+                heart.style.fontSize = `${Math.random() * 20 + 15}px`;
+                heart.style.color = heartColors[Math.floor(Math.random() * heartColors.length)];
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.top = '0';
+                heart.style.opacity = '0.8';
+                heart.style.transform = `rotate(${Math.random() * 360}deg)`;
+                confettiContainer.appendChild(heart);
+                
+                // Animación para cada corazón
+                const animation = heart.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.8 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.1, 0.5, 0.8, 1)'
+                });
+                
+                // Eliminar el corazón después de la animación
+                animation.onfinish = () => heart.remove();
+            }
+            
+            // Eliminar el contenedor después de 5 segundos
+            setTimeout(() => {
+                confettiContainer.remove();
+            }, 5000);
+        }
+        
+        // Crear efecto de brillo
+        function createSparkleEffect() {
+            const sparkleContainer = document.createElement('div');
+            sparkleContainer.style.position = 'fixed';
+            sparkleContainer.style.top = '0';
+            sparkleContainer.style.left = '0';
+            sparkleContainer.style.width = '100%';
+            sparkleContainer.style.height = '100%';
+            sparkleContainer.style.pointerEvents = 'none';
+            sparkleContainer.style.zIndex = '9998';
+            document.body.appendChild(sparkleContainer);
+            
+            for (let i = 0; i < 50; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.style.position = 'absolute';
+                sparkle.style.width = '5px';
+                sparkle.style.height = '5px';
+                sparkle.style.backgroundColor = '#fff';
+                sparkle.style.borderRadius = '50%';
+                sparkle.style.boxShadow = '0 0 10px 2px #fff, 0 0 20px 5px #ff69b4';
+                sparkle.style.left = `${Math.random() * 100}%`;
+                sparkle.style.top = `${Math.random() * 100}%`;
+                sparkle.style.opacity = '0';
+                sparkleContainer.appendChild(sparkle);
+                
+                // Animación de brillo
+                sparkle.animate([
+                    { opacity: 0, transform: 'scale(0.5)' },
+                    { opacity: 1, transform: 'scale(1.5)' },
+                    { opacity: 0, transform: 'scale(0.5)' }
+                ], {
+                    duration: Math.random() * 2000 + 1000,
+                    delay: Math.random() * 1000
+                });
+                
+                // Eliminar después de la animación
+                setTimeout(() => {
+                    sparkle.remove();
+                }, 3000);
+            }
+            
+            // Eliminar el contenedor después de 3 segundos
+            setTimeout(() => {
+                sparkleContainer.remove();
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
