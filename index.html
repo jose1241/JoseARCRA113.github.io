@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Para Menita</title>
+    <title>Para Mi niña dios</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <style>
@@ -520,30 +520,257 @@
             50% { opacity: 1; }
         }
         
-        @media (max-width: 650px) {
+        /* RESPONSIVE DESIGN */
+        /* Tablets y pantallas medianas */
+        @media (max-width: 768px) {
             .love-letter-container {
-                padding: 20px 15px;
+                padding: 30px 20px;
+                border-width: 6px;
             }
             
             .letter-header h1 {
-                font-size: 2.8rem;
+                font-size: 3rem;
+            }
+            
+            .letter-header p {
+                font-size: 1rem;
+            }
+            
+            .section-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 1.2rem;
             }
             
             .section-title {
                 font-size: 1.3rem;
             }
             
+            .personalized-message {
+                font-size: 1rem;
+            }
+            
+            .final-message h2 {
+                font-size: 1.6rem;
+            }
+            
+            .final-message {
+                padding: 25px 15px;
+            }
+            
             .signature p {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .signature p::after {
+                width: 160px;
+            }
+            
+            .gift-button {
+                padding: 12px 35px;
+                font-size: 1.1rem;
+            }
+            
+            .gift-container {
+                max-width: 90%;
+            }
+            
+            .romantic-quote::before {
+                top: -10px;
+            }
+            
+            .romantic-quote::after {
+                bottom: -20px;
+            }
+        }
+        
+        /* Teléfonos móviles */
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+            
+            .love-letter-container {
+                padding: 20px 15px;
+                border-width: 4px;
+                margin: 10px;
+                box-shadow: 0 10px 25px rgba(172, 85, 132, 0.2), 0 0 0 6px #fff, 0 0 0 8px #fce5f3;
+            }
+            
+            .letter-header {
+                padding: 15px 0 20px;
+            }
+            
+            .letter-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .letter-header h1::after {
+                width: 90px;
+                height: 2px;
+                bottom: -7px;
+            }
+            
+            .letter-header p {
+                font-size: 0.95rem;
+                padding: 0 10px;
+            }
+            
+            .heart-divider {
+                margin: 15px 0;
+            }
+            
+            .heart-divider i {
+                font-size: 1.5rem;
+                margin: 0 10px;
+            }
+            
+            .letter-content {
+                padding: 10px;
+                font-size: 1rem;
+            }
+            
+            .letter-content::before {
+                font-size: 6rem;
+                top: -20px;
+                left: -10px;
+            }
+            
+            .section-header {
+                margin-bottom: 15px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .section-icon {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .section-title {
+                font-size: 1.2rem;
+            }
+            
+            .love-language-section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+            
+            .personalized-message {
+                font-size: 0.95rem;
+                padding: 10px;
+                min-height: 80px;
+            }
+            
+            .final-message {
+                padding: 20px 10px;
+                margin: 20px 0;
+            }
+            
+            .final-message h2 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+            
+            .final-message p {
+                font-size: 0.95rem;
+                line-height: 1.6;
+            }
+            
+            .signature {
+                margin-top: 30px;
+                padding-right: 30px;
+            }
+            
+            .signature p {
+                font-size: 1.8rem;
+            }
+            
+            .signature p::after {
+                width: 130px;
+                height: 2px;
+                bottom: -7px;
+            }
+            
+            .gift-button-container {
+                margin: 20px 0;
             }
             
             .gift-button {
                 padding: 12px 30px;
-                font-size: 1.1rem;
+                font-size: 1rem;
+            }
+            
+            .gift-container {
+                max-width: 95%;
             }
             
             .gift-message {
                 font-size: 1.5rem;
+                padding: 12px;
+            }
+            
+            .secret-note {
+                font-size: 0.8rem;
+                margin: 15px 0;
+            }
+            
+            .footer {
+                padding: 20px;
+                font-size: 0.9rem;
+            }
+            
+            .footer::before {
+                font-size: 1.3rem;
+                top: -8px;
+            }
+            
+            .romantic-quote {
+                font-size: 1rem;
+                padding: 0 15px;
+                margin: 15px 0;
+            }
+            
+            .romantic-quote::before {
+                font-size: 1.8rem;
+                top: -10px;
+            }
+            
+            .romantic-quote::after {
+                font-size: 1.8rem;
+                bottom: -20px;
+            }
+        }
+        
+        /* Pantallas muy pequeñas */
+        @media (max-width: 360px) {
+            .letter-header h1 {
+                font-size: 1.9rem;
+            }
+            
+            .section-title {
+                font-size: 1.1rem;
+            }
+            
+            .personalized-message {
+                font-size: 0.9rem;
+            }
+            
+            .final-message h2 {
+                font-size: 1.3rem;
+            }
+            
+            .signature p {
+                font-size: 1.6rem;
+            }
+            
+            .gift-button {
+                padding: 10px 25px;
+                font-size: 0.95rem;
+            }
+            
+            .gift-message {
+                font-size: 1.3rem;
             }
         }
     </style>
@@ -636,7 +863,7 @@ y el horizonte al que siempre me dirijo.</p>
             <!-- Contenedor del botón -->
             <div class="gift-button-container">
                 <button id="giftButton" class="gift-button">
-                   ¿Qué sera este boton? <i class="fas fa-heart button-heart"></i>
+                   ¿Qué será este botón? <i class="fas fa-heart button-heart"></i>
                 </button>
             </div>
             
@@ -815,5 +1042,3 @@ y el horizonte al que siempre me dirijo.</p>
     </script>
 </body>
 </html>
-
-
